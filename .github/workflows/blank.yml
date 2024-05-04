@@ -24,10 +24,7 @@ jobs:
         run: npm install
 
       - name: 📦 Build pages
-        run: |
-          npm run build
-          npm run export
-        shell: bash
+        run: npm run build
 
       - name: 🚀 Deploy to GitHub Pages
         if: success()  # 仅在构建成功时部署
@@ -38,6 +35,6 @@ jobs:
           REPOSITORY_NAME: Alicehhhmm/resume
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages  # 部署到的分支，通常是 gh-pages
-          FOLDER: out # 构建输出的目录(一般输出：dist，next.js除外)
+          FOLDER: dist # 构建输出的目录(一般输出：dist，next.js除外)
           CLEAN: true  # 自动清理删除的文件
           COMMIT_MESSAGE: 🎉 update from resume
