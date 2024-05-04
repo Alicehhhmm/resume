@@ -6,6 +6,10 @@ on:
       - main
   workflow_dispatch:  # 允许手动运行
 
+# 允许仓库写权限
+permissions:
+  contents: write
+
 jobs:
   generator-resume:
     name: Generating pages
