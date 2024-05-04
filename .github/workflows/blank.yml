@@ -21,10 +21,10 @@ jobs:
           node-version: "18.17.0"
 
       - name: 📝 Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: 📦 Build pages
-        run: pnpm run build
+        run: npm run build
 
       - name: 🚀 Deploy to GitHub Pages
         if: success()  # 仅在构建成功时部署
