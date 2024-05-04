@@ -9,8 +9,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  generator-resume:
     # The type of runner that the job will run on (windows/ubuntu-latest)
+    name: Generating pages
     runs-on:  windows-latest
 
     steps:
