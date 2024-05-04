@@ -4,22 +4,19 @@ on:
   push:
     branches:
       - main
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  workflow_dispatch:  # 允许手动运行
 
 jobs:
   generator-resume:
-    # The type of runner that the job will run on (windows/ubuntu-latest)
     name: Generating pages
-    runs-on:  windows-latest
+    runs-on: windows-latest
 
     steps:
       - name: ♻️ Checkout Repository
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: 🎉 Setup Node.js
-      - uses: actions/checkout@v4
+        uses: actions/setup-node@v2
         with:
           node-version: "16"
 
@@ -29,16 +26,15 @@ jobs:
       - name: 📦 Build pages
         run: npm run build
 
-      - name: 🚀  Deploy to GitHub Pages
-        if: success() # 仅在构建成功时部署
+      - name: 🚀 Deploy to GitHub Pages
+        if: success()  # 仅在构建成功时部署
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GIT_CONFIG_NAME: maki-bot
           GIT_CONFIG_EMAIL: 1245500390@qq.com
           REPOSITORY_NAME: Alicehhhmm/resume
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BASE_BRANCH: main
-          BRANCH: main # The branch the action should deploy to.
-          FOLDER: dist # The folder the action should deploy.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
+          BRANCH: gh-pages  # 部署到的分支，通常是 gh-pages
+          FOLDER: dist  # 构建输出的目录
+          CLEAN: true  # 自动清理删除的文件
           COMMIT_MESSAGE: 🎉 update from resume
