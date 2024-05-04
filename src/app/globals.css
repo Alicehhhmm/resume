@@ -3,13 +3,11 @@
 @tailwind utilities;
 
 :root {
+    --bd-color: #1e1e1e;
 }
 
 body {
-}
-
-@layer utilities {
-}
-
-@media (prefers-color-scheme: dark) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
