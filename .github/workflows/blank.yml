@@ -1,36 +1,43 @@
-# This is a basic workflow to help you get started with Actions
+name: 📦 Build and Deploy Resume CI 🚀
 
-name: CI
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    # The type of runner that the job will run on (windows/ubuntu-latest)
+    runs-on:  windows-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: ♻️ Checkout Repository
       - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: 🎉 Setup Node.js
+      - uses: actions/checkout@v4
+        with:
+          node-version: "16"
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: 📝 Install dependencies
+        run: npm install
+
+      - name: 📦 Build pages
+        run: npm run build
+
+      - name: 🚀  Deploy to GitHub Pages
+        if: success() # 仅在构建成功时部署
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GIT_CONFIG_NAME: maki-bot
+          GIT_CONFIG_EMAIL: 1245500390@qq.com
+          REPOSITORY_NAME: Alicehhhmm/resume
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BASE_BRANCH: main
+          BRANCH: main # The branch the action should deploy to.
+          FOLDER: dist # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
+          COMMIT_MESSAGE: 🎉 update from resume
