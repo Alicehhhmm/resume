@@ -3,15 +3,21 @@
   "version": "0.0.0",
   "private": true,
   "description": "this is a prettier config",
+  "author": "norush",
+  "license": "MIT",
   "main": "index.js",
-  "author": "",
-  "license": "ISC",
-  "keywords": [],
+  "keywords": [
+    "prettier",
+    "configuration"
+  ],
   "files": [
     "library.js",
     "react.js"
   ],
-  "devDependencies": {
+  "peerDependencies": {
+
+  },
+  "dependencies": {
 
   }
 }
