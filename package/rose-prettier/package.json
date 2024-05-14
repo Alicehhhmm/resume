@@ -1,0 +1,17 @@
+{
+  "name": "@rose/prettier-config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "this is a prettier config",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "files": [
+    "library.js",
+    "react.js"
+  ],
+  "devDependencies": {
+
+  }
+}
