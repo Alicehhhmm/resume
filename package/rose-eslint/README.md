@@ -1,2 +1,3 @@
 # @rose/eslint-config
-This is a eslint config for Rose UI.
+
+This is the eslint configuration for the rose ui library
