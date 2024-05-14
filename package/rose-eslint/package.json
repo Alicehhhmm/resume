@@ -2,13 +2,17 @@
   "name": "@rose/eslint-config",
   "version": "0.0.0",
   "private": true,
-  "description": "",
+  "description": "this a eslint config",
+  "author": "norush",
+  "license": "MIT",
   "main": "index.js",
   "files": [
     "library.js",
     "react.js"
   ],
-  "devDependencies": {
-
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "eslint-config-prettier": "^9.1.0"
   }
 }
