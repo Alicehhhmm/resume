@@ -2,9 +2,15 @@
   "name": "@rose/typescript-config",
   "version": "0.0.0",
   "private": "true",
-  "description": "",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "description": "this a typescript config",
+  "author": "norush",
+  "license": "ISC",
+  "main": "base.json",
+  "keywords": [
+    "typescript",
+    "configuration"
+  ],
+  "dependencies": {
+
+  }
 }
