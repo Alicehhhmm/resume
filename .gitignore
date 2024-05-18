@@ -11,10 +11,12 @@
 
 # ide
 .idea
+.idea/
 
 # next.js
 /.next/
 /out/
+*.next
 
 # production
 /build
