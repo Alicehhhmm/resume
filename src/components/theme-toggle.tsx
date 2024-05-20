@@ -14,12 +14,13 @@ export function ThemeToggle() {
     }
 
     return (
-        <Button variant="ghost" size="icon" onClick={onHandleChange}>
-            {theme === "light" ? (
-                <Sun className="h-[1.5rem] w-[1.3rem] dark:hidden" />
-            ) : (
-                <Moon className="h-[1.5rem] w-[1.3rem] dark:hidden" />
-            )}
+        <Button variant="ghost" asChild size="icon" onClick={onHandleChange}>
+            {/*{theme === "light" ? (*/}
+            {/*    <Sun className="h-[1.5rem] w-[1.3rem] dark:hidden" />*/}
+            {/*) : (*/}
+            {/*    <Moon className="h-[1.5rem] w-[1.3rem] dark:hidden" />*/}
+            {/*)}*/}
+            <Sun className="h-[1.5rem] w-[1.3rem] dark:hidden" />
         </Button>
     )
 }

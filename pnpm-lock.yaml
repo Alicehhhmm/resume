@@ -82,6 +82,12 @@ importers:
         specifier: ^5
         version: 5.0.2
 
+  package/rose-prettier:
+    dependencies:
+      next-themes:
+        specifier: ^0.3.0
+        version: 0.3.0(react-dom@18.0.0)(react@18.0.0)
+
 packages:
 
   /@alloc/quick-lru@5.2.0:
