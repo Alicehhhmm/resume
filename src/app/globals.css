@@ -6,8 +6,9 @@
     --bd-color: #fff;
     background-color: var(--bg-color);
 }
+
+/* 暗色模式下 */
 :root.dark {
-    /* 暗色模式下的背景色 */
     --bg-color: #050a1791;
     --bg-color-gray: #f4f4f4;
 }

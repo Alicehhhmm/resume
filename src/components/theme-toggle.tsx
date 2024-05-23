@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { useThemeStore } from "@/stores/theme-store"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
@@ -8,8 +9,11 @@ import { Button } from "@/components/ui/button"
 
 export function ThemeToggle() {
     const { setTheme, theme } = useTheme()
+    const { setDark, isDark } = useThemeStore()
+
     const onHandleChange = () => {
         setTheme(theme === "light" ? "dark" : "light")
+        setDark(theme === "dark")
     }
 
     const toggleDark = (event: MouseEvent) => {
