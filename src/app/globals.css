@@ -4,6 +4,9 @@
 
 :root {
     --bd-color: #fff;
+    --codeMirror-fgColor: #c5d1de;
+    --codeMirror-bgColor: #22272e;
+
     background-color: var(--bg-color);
 }
 
