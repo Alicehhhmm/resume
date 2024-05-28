@@ -1,0 +1,32 @@
+---
+title: "Next.JS 14 如何实现静态文档记录（docs、blog）功能"
+date: "2024-5-28 10:00 am"
+---
+
+
+目录结构
+my-next14-project/
+├── components/
+│   └── ...  # 组件文件
+├── lib/
+│   └── posts.js  # 处理博客文章的函数
+├── public/
+│   └── ...  # 静态资源
+├── src/
+│   ├── app/
+│   │   ├── layout.js  # 全局布局
+│   │   ├── page.js  # 主页
+│   │   └── blog/
+│   │       ├── [[...slug]]/
+│   │       │   └── page.js   # 动态路由页面，用于渲染博客文章
+│   │       └── page.js       # 博客文章列表页面
+│   └── styles/
+│       └── ...  # 样式文件
+├── posts/
+│   ├── react-blog
+│   │   └── example-post.md  # 示例 Markdown 博客文章
+│   ├── example-post.md  # 示例 Markdown 博客文章
+│   ├── another-post.mdx  # 示例 MDX 博客文章
+│   └── ...  # 其他博客文章
+├── next.config.js  # Next.js 配置文件
+└── package.json  # 项目依赖

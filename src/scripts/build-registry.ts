@@ -11,7 +11,12 @@
  */
 
 // @sts-nocheck
-import { existsSync, promises as fs, readdirSync, readFileSync } from "fs"
+import {
+    existsSync,
+    promises as fsPromises,
+    readdirSync,
+    readFileSync,
+} from "fs"
 import path from "node:path"
 import matter from "gray-matter"
 
@@ -60,3 +65,9 @@ export async function createRegistry() {
     if (!posts) throw new Error("not found")
     return posts
 }
+
+async function init() {
+    const posts = await analysePostsFile()
+    console.log("initial", posts)
+}
+init()
