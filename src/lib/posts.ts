@@ -1,7 +1,6 @@
 import { promises as fsPromises } from "fs"
 import path from "path"
 import matter from "gray-matter"
-import { serialize } from "next-mdx-remote/serialize"
 
 const postsDirectory = path.join(process.cwd(), "src", "posts")
 
@@ -30,11 +29,10 @@ export async function getPostBySlug(slug: string): Promise<any> {
     }
 
     const { data, content } = matter(fileContent)
-    const mdxSource = await serialize(content)
 
     return {
         meta: data,
-        content: mdxSource,
+        content: content,
     }
 }
 

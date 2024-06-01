@@ -2,11 +2,8 @@ import Link from "next/link"
 
 import { getAllPosts } from "@/lib/posts"
 
-export interface PostListType {}
-
-export default async function BlogsPage(params: PostListType) {
+export default async function BlogsPage() {
     const posts = await getAllPosts()
-    console.log("IndexPage@posts", posts)
 
     return (
         <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
