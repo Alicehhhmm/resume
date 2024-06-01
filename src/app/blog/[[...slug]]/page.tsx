@@ -1,5 +1,6 @@
 /**
  * @description 动态路由页面，用于渲染博客文章
+ * @scheme1: next-mdx-remote 方案
  */
 import { Suspense } from "react"
 import { MDXRemote } from "next-mdx-remote/rsc"
