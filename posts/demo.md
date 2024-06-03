@@ -1,6 +1,6 @@
 ---
-title: "posts demo"
-date: "2024-06-01 18:00"
+title: posts demo
+date: 2024-06-01 18:00
 ---
 
 # scheme2
