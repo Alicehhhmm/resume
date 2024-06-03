@@ -10,7 +10,6 @@ export default async function BlogsPage() {
     const posts2 = allPosts.sort((a, b) =>
         compareDesc(new Date(a.date), new Date(b.date))
     )
-    console.log(allPosts, "allPosts")
     console.log(posts2, "posts2")
 
     return (
