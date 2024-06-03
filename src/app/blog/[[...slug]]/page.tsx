@@ -2,7 +2,7 @@
  * @description 动态路由页面，用于渲染博客文章
  * @scheme1: next-mdx-remote 方案
  */
-import { Suspense } from "react"
+import React, {Suspense} from "react"
 import { MDXRemote } from "next-mdx-remote/rsc"
 import rehypeKatex from "rehype-katex"
 import rehypePrettyCode from "rehype-pretty-code"
@@ -11,6 +11,7 @@ import remarkMath from "remark-math"
 import { fontSans } from "@/lib/fonts"
 import { getAllPosts, getPostBySlug } from "@/lib/posts"
 import { cn } from "@/lib/utils"
+import {components} from "@/components/mdx-components";
 
 interface PostType {
     meta: {
@@ -62,7 +63,7 @@ export default async function PostPage({ params }: any) {
                                     ],
                                 },
                             }}
-                            components={{}}
+                            components={components}
                         />
                     </Suspense>
                 </div>
