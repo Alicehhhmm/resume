@@ -34,6 +34,7 @@ const config: Config = {
             transparent: "transparent",
             current: "currentColor",
             white: "#ffffff",
+            line:'#d8dad9',
             soft: {
                 ws: "#FFF8E1",
                 rs: "#FFC0CB",
