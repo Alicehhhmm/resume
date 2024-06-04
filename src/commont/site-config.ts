@@ -8,6 +8,18 @@ export const siteConfig = {
             title: "Home",
             href: "/",
         },
+        {
+            title: "blog",
+            href: "/article",
+        },
+        {
+            title: "Project",
+            href: "/project",
+        },
+        {
+            title: "Contacts",
+            href: "/contacts",
+        },
     ],
     links: {
         twitter: "https://github.com/Alicehhhmm/resume",
