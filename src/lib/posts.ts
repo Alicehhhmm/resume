@@ -1,6 +1,7 @@
 import { promises as fsPromises } from "fs"
 import path from "path"
 import matter from "gray-matter"
+import {compareDesc} from "date-fns";
 
 const postsDirectory = path.join(process.cwd(), "src", "posts")
 
@@ -42,6 +43,7 @@ export async function getPostBySlug(slug: string): Promise<any> {
  */
 export async function getAllPosts() {
     const slugs: Array<string | object> = []
+    const allFile: Array<string | object> = []
 
     const processDirectory = async (dirPath: string, baseSlug = "") => {
         const entries = await fsPromises.readdir(dirPath, {
@@ -59,11 +61,25 @@ export async function getAllPosts() {
                     baseSlug,
                     entry.name.replace(/\.mdx?$/, "")
                 )
+
+                const {meta, content} = await getPostBySlug(slug)
+                const backslashUrl = slug.replace(/\\/g, '/');
+
                 slugs.push({ slug })
+                allFile.push({
+                    title: meta.title || slug.split('\\')[0],
+                    date: meta.date || new Date().toISOString(),
+                    url: backslashUrl,
+                    slug: backslashUrl,
+                    slugs: slugs,
+                    content: content
+                })
             }
         }
     }
     await processDirectory(postsDirectory)
 
-    return slugs
+    allFile.sort((a: any, b: any) => compareDesc(new Date(a.date), new Date(b.date)))
+
+    return allFile
 }
