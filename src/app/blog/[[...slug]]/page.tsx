@@ -44,16 +44,18 @@ export default async function PostPage({ params }: any) {
                 </p>
                 <div className="">
                     <Suspense fallback={<>Loading...</>}>
-                        <MDXRemote
-                            lazy
-                            source={post.content || "# 默认内容"}
-                            options={{
+                        {await MDXRemote({
+                            lazy: true,
+                            source: post.content || "# 默认内容",
+                            options: {
                                 parseFrontmatter: true,
                                 mdxOptions: {
                                     remarkPlugins: [remarkMath],
                                     rehypePlugins: [
+                                        // @ts-ignore
                                         rehypeKatex,
                                         [
+                                            // @ts-ignore
                                             rehypePrettyCode,
                                             {
                                                 theme: "material-theme-palenight",
@@ -61,9 +63,9 @@ export default async function PostPage({ params }: any) {
                                         ],
                                     ],
                                 },
-                            }}
-                            components={components}
-                        />
+                            },
+                            components: components,
+                        })}
                     </Suspense>
                 </div>
             </article>
