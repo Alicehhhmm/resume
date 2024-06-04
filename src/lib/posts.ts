@@ -54,7 +54,7 @@ export async function getAllPosts() {
                     path.join(dirPath, entry.name),
                     path.join(baseSlug, entry.name)
                 )
-            } else {
+            } else if (entry.name.match(/\.mdx?$/)) {
                 const slug = path.join(
                     baseSlug,
                     entry.name.replace(/\.mdx?$/, "")
