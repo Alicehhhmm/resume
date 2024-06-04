@@ -22,9 +22,8 @@ interface PostType {
 }
 
 export default async function PostPage({ params }: any) {
-    const { slug } = params
-    const post: PostType = await getPostBySlug(slug.join("/"))
-    console.log("post detail pages:", post)
+    const post: PostType = await getPostBySlug(params.slug.join("/"))
+
     return (
         <div className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
             <article>
