@@ -6,7 +6,7 @@
     "dev": "next dev",
     "start": "next start",
     "clean": "rimraf .next out dist",
-    "build": "npm run clean && next build",
+    "build": "next build",
     "preview": "next start -p 8297",
     "lint": "next lint"
   },
