@@ -1,5 +1,17 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files"
 
+const LinksProperties = defineNestedType(() => ({
+    name: "LinksProperties",
+    fields: {
+        post: {
+            type: "string",
+        },
+        api: {
+            type: "string",
+        },
+    },
+}))
+
 export const Post = defineDocumentType(() => ({
     name: "Post",
     filePathPattern: `**/*.mdx`,
@@ -19,7 +31,7 @@ export const Post = defineDocumentType(() => ({
         },
         link: {
             type: "nested",
-            required: true
+            of: LinksProperties
         }
     },
     computedFields: {
