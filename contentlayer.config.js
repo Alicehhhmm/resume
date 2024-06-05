@@ -1,4 +1,10 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files"
+import {defineDocumentType, defineNestedType, makeSource} from "contentlayer/source-files"
+import {codeImport} from "remark-code-import"
+import remarkGfm from "remark-gfm"
+import rehypeSlug from "rehype-slug"
+import remarkMath from "remark-math"
+import rehypeKatex from "rehype-katex"
+import rehypePrettyCode from "rehype-pretty-code"
 
 const LinksProperties = defineNestedType(() => ({
     name: "LinksProperties",
@@ -27,9 +33,9 @@ export const Post = defineDocumentType(() => ({
         },
         description: {
             type: "string",
-            required: true
+            required: false
         },
-        link: {
+        links: {
             type: "nested",
             of: LinksProperties
         }
@@ -45,4 +51,17 @@ export const Post = defineDocumentType(() => ({
 export default makeSource({
     contentDirPath: "posts",
     documentTypes: [Post],
+    mdx: {
+        remarkPlugins: [remarkGfm, codeImport, remarkMath],
+        rehypePlugins: [
+            rehypeSlug,
+            rehypeKatex,
+            [
+                rehypePrettyCode,
+                {
+                    theme: "material-theme-palenight",
+                },
+            ],
+        ],
+    }
 })
