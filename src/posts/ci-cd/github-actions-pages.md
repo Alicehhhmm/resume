@@ -1,3 +1,7 @@
+---
+title: GitHub Pages
+date: 2024-06-05
+---
 # 如何使用 GitHub Actions自动部署静态网站
 
 ## 1.准备内容
@@ -16,7 +20,7 @@ npm create vite@latest ./ --template react
 
 ![img.png](img/img.png)
 
-2.2 配置工作流文件 
+2.2 配置工作流文件
 > .github/workflows/main.yml
 
 ```bash
@@ -26,7 +30,7 @@ on:
   push:
     branches:
       - main
-      
+
 # 允许仓库写权限
 permissions:
   contents: write

@@ -68,6 +68,9 @@ importers:
       remark-math:
         specifier: ^6.0.0
         version: 6.0.0
+      rimraf:
+        specifier: ^5.0.7
+        version: 5.0.7
       tailwind-merge:
         specifier: ^2.3.0
         version: 2.3.0
@@ -91,7 +94,7 @@ importers:
         specifier: ^18
         version: 18.0.0
       '@typescript-eslint/eslint-plugin':
-        specifier: ^7.1.0
+        specifier: ^7.9.0
         version: 7.9.0(@typescript-eslint/parser@7.2.0)(eslint@8.0.0)(typescript@5.0.2)
       '@typescript-eslint/parser':
         specifier: ^7.1.0
@@ -3253,6 +3256,7 @@ packages:
 
   /glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
     dependencies:
       fs.realpath: 1.0.0
       inflight: 1.0.6
@@ -5681,10 +5685,19 @@ packages:
 
   /rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
     dependencies:
       glob: 7.2.3
     dev: true
+
+  /rimraf@5.0.7:
+    resolution: {integrity: sha512-nV6YcJo5wbLW77m+8KjH8aB/7/rxQy9SZ0HY5shnwULfS+9nmTtVXAJET5NdZmCzA4fPI/Hm1wo/Po/4mopOdg==}
+    engines: {node: '>=14.18'}
+    hasBin: true
+    dependencies:
+      glob: 10.3.15
+    dev: false
 
   /run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}

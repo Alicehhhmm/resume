@@ -10,12 +10,16 @@ interface PostPageProps {
     }
 }
 
+interface CustomPost extends Post {
+    description?: string;
+}
+
 /**
  * 获取指定路径文件内容
  * @param slug 动态路由路径
  */
 async function analysisPageParams({params}: PostPageProps) {
-    const doc: Post | undefined = allPosts.find(doc => doc._raw.flattenedPath === params.slug)
+    const doc = allPosts.find((doc: CustomPost) => doc._raw.flattenedPath === params.slug)
 
     if (!doc) {
         return null

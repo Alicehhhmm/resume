@@ -1,1 +1,0 @@
-# Create localtion Model Tutorial
