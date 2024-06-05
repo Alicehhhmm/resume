@@ -3,6 +3,8 @@ import {allPosts, Post} from "contentlayer/generated"
 import { format, parseISO } from "date-fns"
 import {Metadata} from "next"
 import MDX from "@/components/mdx-components"
+import {cn} from "@/lib/utils";
+import {fontSans} from "@/lib/fonts";
 
 interface PostPageProps {
     params: {
@@ -65,11 +67,16 @@ export default async function PostPage({params}: PostPageProps) {
 
     return (
         <article className="mx-auto max-w-xl py-8">
-            <div className="mb-8 text-center">
-                <time dateTime={post.date} className="mb-1 text-xs text-gray-600">
-                    {format(parseISO(post.date), "LLLL d, yyyy")}
+            <div className="mb-8 ">
+                <h1 className={cn(
+                    fontSans.className,
+                    "text-[32px] font-black leading-[36px] text-[--title]"
+                )}>
+                    {post.title}
+                </h1>
+                <time dateTime={post.date} className="mb-1 text-gl text-gray-600">
+                    {format(new Date(post.date), "LLLL d, yyyy")}
                 </time>
-                <h1>{post.title}</h1>
             </div>
             {post.body?.code && <MDX code={post.body.code}/>}
         </article>
