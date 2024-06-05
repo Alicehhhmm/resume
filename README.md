@@ -1,4 +1,4 @@
-在线预览： https://alicehhhmm.github.io/resume/
+在线预览： https://resume-th.vercel.app/
 
 # 支持功能
 
